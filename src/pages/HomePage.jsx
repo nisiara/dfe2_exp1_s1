@@ -1,3 +1,10 @@
-const HomePage = () => "Este es el home"
+const HomePage = () => {
+  return(
+    <section>
+      <hr />
+      <img src="images/vitrina.jpg" alt="Automotora" />
+    </section>
+  )
+}
  
 export default HomePage;

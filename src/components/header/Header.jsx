@@ -19,7 +19,7 @@ const Header = () => {
               <Link to={`/type/${type.toLowerCase()}`}>{type}</Link>
             </li>
           ))}
-          
+          <li><Link to="/about-us">About us</Link></li>
         </ul>
       </nav>
      </header>
