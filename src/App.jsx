@@ -1,17 +1,16 @@
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import HomePage from "./pages/HomePage";
-import ContactPage from "./pages/ContactPage";
 import { Route, Routes } from "react-router-dom";
 import CarTypePage from "./pages/CarTypePage";
+import "./main.sass"
 
 const App = () => {
   return (
-    <main>
+    <main className="container">
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/type/:type" element={<CarTypePage/>}/>
-        <Route path="/contact" element={<ContactPage/>} />
       </Routes>
     </main>
   )

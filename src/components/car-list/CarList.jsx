@@ -1,4 +1,5 @@
-import data from "../../public/data/data";
+import data from "../../../public/data/data";
+import "./CarList.sass"
 
 const CarList = ({carType}) => {
   const filteredCars = carType 
@@ -6,19 +7,19 @@ const CarList = ({carType}) => {
     : data;
 
   return ( 
-    <>
+    <section className="car-list">
       {filteredCars.length > 0 ? (
         filteredCars.map(car => (
-          <article key={car.id}>
-            <h3>{car.marca}</h3>
-            <h4>{car.modelo}</h4>
-            <p>Tipo: {car.tipo}</p>
+          <article key={car.id} className="car-list__car">
+            <h3 className="car-list__car__brand">{car.marca}</h3>
+            <h6 className="car-list__car__model">{car.modelo}</h6>
+            <span className="car-list__car__type">{car.tipo}</span>
           </article>
         ))
       ) : (
         <p>No se encontraron autos de tipo "{carType}"</p>
       )}
-    </>
+    </section>
 
   );
 }
