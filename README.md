@@ -1,16 +1,31 @@
-# React + Vite
+# Desarrollo Frontend II
+Aplicación web básica desarrollada con React la cual despliega un catálogo de vehículos. La finalidad es usar la libreria de React Router para navegar por las distintas 'páginas' de la aplicación.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Características
 
-Currently, two official plugins are available:
+- **Página principal**: Muestra una imagen de bienvenida de la automotora
+- **Filtrado por tipo**: Permite visualizar vehículos filtrados por categoría (Sedán, SUV, Deportivo, etc)
+- **Rutas dinámicas**: Navegación mediante React Router DOM v7
+- **Listado dinámico**: Los tipos de vehículos se generan automáticamente desde los datos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologías utilizadas
 
-## React Compiler
+- React
+- React Router DOM v7.9.4
+- SASS para estilos
+- Vite
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 📐 Estructura de rutas
 
-## Expanding the ESLint configuration
+- `/` - Página principal con imagen de vitrina
+- `/type/:type` - Listado de vehículos filtrados por tipo (ej: `/type/sedan`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Componentes principales
+
+- **HomePage**: Página de inicio con imagen de la automotora
+- **CarTypePage**: Página que recibe el parámetro de tipo y filtra los vehículos
+- **CarList**: Componente que lista los vehículos según el tipo recibido
+
+## ✏️ Datos
+
+Los datos de los vehículos se encuentran en `/public/data/data.js`
