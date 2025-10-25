@@ -1,12 +1,22 @@
-import { Link, useLocation } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import data from "../../public/data/data";
 const Header = () => {
-  const  {pathname} = useLocation()
-  console.log('genero', pathname)
+  
+  const carsByType = Object.groupBy(data, auto => auto.tipo);
+  console.log('carsByType', carsByType)
+  const carTypes = Object.keys(carsByType);
+  console.log('carTypes', carTypes)
+
+
   return (
     <nav>
       <ul>
-        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/">Home</Link></li>
+        {carTypes.map(type => (
+          <li key={type}>
+            <Link to={`/type/${type.toLowerCase()}`}>{type}</Link>
+          </li>
+        ))}
         <li><Link to="/contact">Contact</Link></li>
       </ul>
     </nav>
