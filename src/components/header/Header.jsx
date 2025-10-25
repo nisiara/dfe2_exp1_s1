@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import data from "../../../public/data/data";
 import "./Header.sass"
 const Header = () => {
@@ -13,13 +13,16 @@ const Header = () => {
       <h1>Automotora</h1>
       <nav className="header__nav"> 
         <ul>
-          <li><Link to="/">Home</Link></li>
-          {carTypes.map(type => (
-            <li key={type}>
-              <Link to={`/type/${type.toLowerCase()}`}>{type}</Link>
-            </li>
-          ))}
-          <li><Link to="/about-us">About us</Link></li>
+          <li>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'header__link header__link--active' : 'header__link')}>Home</NavLink></li>
+            {carTypes.map(type => (
+              <li key={type}>
+                <NavLink to={`/type/${type.toLowerCase()}`} className={({ isActive }) => (isActive ? 'header__link header__link--active' : 'header__link')}>{type}</NavLink>
+              </li>
+            ))}
+          <li>
+            <NavLink to="/about-us" className={({ isActive }) => (isActive ? 'header__link header__link--active' : 'header__link')}>About us</NavLink>
+          </li>
         </ul>
       </nav>
      </header>
